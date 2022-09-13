@@ -1,0 +1,62 @@
+Chess Game outline.
+
+
+
+*TURN
+Select piece and desired new coordinate.Function needs to:
+    DONE-(Board grid with starting pieces populated)
+    DONE-(Dictionary which maps square location strings(i.e. 'E4') to coordinate tuples as position in list of lists .
+    DONE-Create print display that shows coordinates in  order x, y even though list prints y, x
+    DONE-Identify piece current location.
+    DONE-Calculate distance between current and desired location.
+    DONE-Calculate slope between existing and desired location.
+    DONE- Add boolean to allow pawn to move forward 2 if its the first move.  Add boolean to allow pawn to move
+        diagonal if it is attacking enemy piece.
+    DONE- Check if one your own pieces exists on the square you ask to move to.
+    DONE -Add booleans to allow pawn to take en'passant.
+    DONE - add booleans to prevent paws from moving backward, or from capturing pieces directly in front.
+    DONE- REFACTOR Setup Grid and Coordinate Index so that future movements are on a traditional x,y axis.
+    DONE-Make a list of pieces on whatever vertical, horizontal or diagonal your requested piece is moving and check each
+        element to see if it is empty.  Check if pieces exist along line between existing and desired location.
+    DONE -Add timer that keeps track of players time
+    DONE-Add a function that checks and executes pawn promotion.
+    DONE -Add castle function
+    Done- Create a function that can determine whether the square you are moving to will have an open line to enemy pieces.
+    DONE - Check if when move is complete, next player's legal moves include attack on king (CHECK)
+    DONE - Add function that determines checkmate
+    DONE - Add function that returns stalemate
+
+TO DO-
+
+-Add pause function for timer.
+-Make Print statements only appear if the player is making a turn (not on the legal move checker)
+-Make the import OS so that it overwrites instead of continues the page.
+-Make a three move repeat sequence checker
+-Finish debugging.
+
+
+
+
+
+
+BEYOND PYTHON:
+-add database that tracks username, password, game history and ELO score
+-add UI that allows players to customize their playing squares, login and play online
+
+
+
+BUGS:
+Legal Moves available.test page returns line 311 local variable 'king_coordinates' referenced before assignment.
+    -attempted solution.  set king_coordinates to None until they are triggered in boolean.  When I set the king coordinates
+    to none they triggered check_coordinates to equal none when the king was selected as the destination square.
+    -ok so I ran the legal move check without the "check" function and it worked fine.  Somehow I need to get the king check function
+    in the right order so I can fix this....I'm seriously so fucking close this is like the last thing lol.  It will work for stalemate as well.
+
+
+checkmate checker:  make a list of the pieces and coordinates that are remaining for a given player
+in the format (piece, coordinates).  Then attempt to move each piece to every square on the board.
+If a single result returns as a legal move, neither checkmate or stalemate is true.
+
+
+CLEAN SAVE POINTS:  8:47pm
+
